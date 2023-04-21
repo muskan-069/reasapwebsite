@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+        table.ques_text {
+            position: relative;
+            margin-top: 20px;
+        }
+        .text{
+            color: black!important;
+            font-weight:600;
+            font-size:20px;
+        }
+        .op{
+            font-size:18px;
+        }
+        #Option1 {
+            margin-right: 10px;
+        }
+        #Option2 {
+            margin-right: 10px;
+        }
+        #Option3 {
+            margin-right: 10px;
+        }
+        #Option4 {
+            margin-right: 10px;
+        }
+        .btn-success {
+            color:white;
+            background-color: #db8ade;
+            border-color: #db8ade;
+        }
+        input#b1 {
+            color: white;
+            background-color: #db8ade;
+            border: 2px solid #db8ade;
+            box-shadow:#db8ade;
+        }
+        .sec {
+            padding-top: 150px;
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+    $("#b1").click(function(){
+        $(".rb").show();
+        $(".rb").attr("disabled",true);
+
+
+    });
+    });
+
+
+        function getanswers()
+        {
+        document.getElementById("UserAnswers").innerHTML = "";
+        var e = document.getElementsByTagName("input");
+            
+        }
+    </script>
+
+    {% include "header.html" %}
+</head>
+<body>
+   
+<div class="container">
+   
+    <div class='sec'>
+        {% for i in  data4 %}
+        <table class="ques_text">
+            <tr>
+                <td class="text">{{i.id}} ) {{i.Ques3}} </td>
+            </tr>
+            <tr>
+                <td class="op"><input type = "radio" class="rb" name = {{i.id}} id="Option1" value="{{i.Op31}}">{{i.Op31}}</td>
+            </tr>
+            <tr>
+                <td class="op"><input type = "radio" class="rb" name = {{i.id}} id="Option2" value="{{i.Op32}}">{{i.Op32}}</td>
+            </tr>
+            <tr>
+                <td class="op"><input type = "radio" class="rb" name = {{i.id}} id="Option3" value="{{i.Op33}}">{{i.Op33}}</td>
+            </tr>
+            <tr>
+                <td class="op"><input type = "radio" class="rb" name = {{i.id}} id="Option4" value="{{i.Op34}}">{{i.Op34}}</td>
+            </tr>
+
+            <tr>
+                <td><label id="corans" class= "rb" style="display:none ; color : #db8ade"><b>{{i.Corans3}}</b></label></td>
+            </tr>
+
+        </table>
+        <hr>    
+
+        {% endfor %}
+        <input type="submit" class="btn btn-success" value="Submit" id="b1" onclick="getanswers()">
+        <br>
+        <b id="UserAnswers"></b>
+    </div>
+</div>
+</body>
+</html>

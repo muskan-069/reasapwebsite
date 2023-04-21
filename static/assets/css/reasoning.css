@@ -1,0 +1,38 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+/*Top section of Reasoning*/
+#topmain h2{
+	margin-bottom:15px;
+	color:black;
+	font-weight:600px;
+	text-align:center;
+	
+}
+span{
+	color:#db8ade;
+}
+#topmain ul.list-group a{
+	color:black;
+}
+#topmain ul.list-group li:hover {
+   
+    background:#e1b3dccf;
+}
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #e1b3dccf;
+    border-color: #f6bf9f;
+}
+
+/*Second section of questions*/
+#topsec{
+	margin-top:90px;
+}
+#topsec h2{
+	text-align:center;
+}
+
