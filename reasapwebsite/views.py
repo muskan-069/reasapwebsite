@@ -11,7 +11,7 @@ def home(request):
         'servcie_data': servcie_data,
         'course_data': course_data
     }
-    return render(request, "index.html",data1)
+    return render(request, "template/index.html",data1)
 def contact (request):
     if request.method == 'POST':
         name = request.POST.get('full_name')
